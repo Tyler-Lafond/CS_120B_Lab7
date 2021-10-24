@@ -14,7 +14,7 @@
 # An example set of tests is shown below. It is important to note that these tests are not "unit tests" in 
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
-tests = [ {'description': 'PINA: 0xFF => PORTC = 0x07, Cnt_State = Cnt_Unpress',
+tests = [ {'description': 'PINA: 0xFF => PORTB = 0x07, Cnt_State = Cnt_Unpress',
     'steps': [ {'inputs': [('PINA',0xFF)], 'iterations': 1 } ],
     'expected': [('PORTB',0x07)],
     },
@@ -40,7 +40,7 @@ tests = [ {'description': 'PINA: 0xFF => PORTC = 0x07, Cnt_State = Cnt_Unpress',
 	{'inputs': [('PINA',0xFD)], 'iterations': 3, 'expected': [('PORTB',0x01)]},
 	{'inputs': [('PINA',0xFD)], 'iterations': 10, 'expected': [('PORTB',0x00)]},
  ],
-    'expected': [('PORTC',0x00)],
+    'expected': [('PORTB',0x00)],
     },
     ]
 
