@@ -108,27 +108,8 @@ void TickLED()
 		case LED_Pause_Unpress:
 			if ((PINA & 0x01) == 0x00)
 			{
-				if (tempB == 0x04)
-				{
-					tempB = tempB >> 1;
-					direct = 0x01;
-				}
-				else if (tempB == 0x02)
-				{
-					if(direct)
-					{
-						tempB = tempB >> 1;
-					}
-					else
-					{
-						tempB = tempB << 1;
-					}
-				}
-				else if (tempB == 0x01)
-				{
-					tempB = tempB << 1;
-					direct = 0x00;
-				}
+				tempB = 0x01;
+				direct = 0x00;
 				LED_State = LED_Change_Press;
 			}
 			else if ((PINA & 0x01) == 0x01)
@@ -202,32 +183,10 @@ void TickLED()
 			if ((PINA & 0x01) == 0x00)
 			{
 				cnt = 5;
+				tempB = 0x01;
 				LCD_ClearScreen();
 				LCD_Cursor(1);
 				LCD_WriteData(cnt + '0');
-				LED_State = LED_Change_Press;
-
-				if (tempB == 0x04)
-				{
-					tempB = tempB >> 1;
-					direct = 0x01;
-				}
-				else if (tempB == 0x02)
-				{
-					if(direct)
-					{
-						tempB = tempB >> 1;
-					}
-					else
-					{
-						tempB = tempB << 1;
-					}
-				}
-				else if (tempB == 0x01)
-				{
-					tempB = tempB << 1;
-					direct = 0x00;
-				}
 				LED_State = LED_Change_Press;
 			}
 			else if ((PINA & 0x01) == 0x01)
