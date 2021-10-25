@@ -26,7 +26,7 @@ void TickCnt()
 	switch(Cnt_State)
 	{
 		case Cnt_SMStart:
-			cnt = 0x07;
+			cnt = 0x00;
 			PORTB = cnt;
 			temp = cnt + '0';
 			LCD_ClearScreen();
@@ -312,7 +312,7 @@ int main(void) {
 	DDRC = 0xFF; PORTC = 0x00;
 	DDRD = 0xFF; PORTD = 0x00;
     /* Insert your solution below */
-	temp = 0x07;
+	temp = 0x00;
 	LCD_init();
 	LCD_Cursor(1);
 	LCD_WriteData(0x07);
